@@ -1,0 +1,8 @@
+
+<mat-grid-list cols="3" grid-template-rows="auto" grid-template-columns="auto-fit" class="block-example border border-dark">
+  <mat-grid-tile
+      *ngFor="let symbol of companySymbolList">
+    <app-stock-card [symbol]=symbol></app-stock-card>
+  </mat-grid-tile>
+</mat-grid-list>
+

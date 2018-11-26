@@ -1,0 +1,59 @@
+<mat-card class="example-card" *ngIf="stockData">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      <img [src]=stockData.companyLogoUrl>
+    </mat-card-title>
+  </mat-card-header>
+  {{stockData.companyData.companyName}} ({{stockData.companyData.symbol}})
+  <mat-card-content>
+    <table mat-table class="mat-elevation-z8">
+      <tr>
+        <th>M.P.</th>
+        <th>LSP</th>
+        <th>LSS</th>
+      </tr>
+      <tr>
+        <td>{{stockData.marketData.marketPercent}}%</td>
+        <td>{{stockData.marketData.lastSalePrice}}</td>
+        <td>{{stockData.marketData.lastSaleSize}}</td>
+      </tr>
+    </table>
+
+    <table mat-table class="mat-elevation-z8">
+      <tr>
+        <th>lastSaleTime</th>
+        <th>lastUpdated</th>
+      </tr>
+      <tr>
+        <td>{{stockData.marketData.lastSaleTime | date:'MM/dd/yyyy hh:mm:ss'}}</td>
+        <td>{{stockData.marketData.lastUpdated | date:'MM/dd/yyyy hh:mm:ss'}}</td>
+      </tr>
+    </table>
+
+    <table mat-table class="mat-elevation-z8">
+      <tr>
+        <th>SECTOR</th>
+        <td>{{stockData.marketData.sector}}</td>
+      </tr>
+      <tr>
+        <th>INDUSTRY</th>
+        <td>{{stockData.companyData.industry}}</td>
+      </tr>
+      <tr>
+        <th>CEO</th>
+        <td>{{stockData.companyData.CEO}}</td>
+      </tr>
+      <tr>
+        <th>WEBSITE</th>
+        <td>{{stockData.companyData.website}}</td>
+      </tr>
+      <tr>
+        <th>DESCRIPTION</th>
+        <td>{{stockData.companyData.description}}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>
